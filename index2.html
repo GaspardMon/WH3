@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <Title> Calculator </Title>
+        <link rel="stylesheet" type="text/css" href="mystyles.css">
+    </head>
+
+    <body>
+        <h4>Open in full screen for a better experience. In order to use the calculator in a good way, you have to enter 2 numbers, then the sign, and then 2 numbers again and finally the sign =. Cos, sin and tan are in radients and not in degres</h4>
+
+
+        <div class="container-fluid" >
+            <div class="row" style="margin-left: auto; margin-right:auto;">
+                <div class="col-md-5" style="background-color: grey; margin-top:10px; ">
+                    <colspan="3"><input type="text" id="result" style="background-color: grey; color: white; width: 100%; text-align: right; font-size: 60px; height: 100px; border-color: black; border-width: 5px; border-radius: 10px;">
+                </div>
+            </div>
+        
+            <div class="row" style="margin-left: auto; margin-right:auto;">
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setNum(1)" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">1</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setNum(2)" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">2</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setNum(3)" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">3</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setSign('&#43')" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">+</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setSign('&#45')" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">-</button><br/>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left: auto; margin-right:auto;">
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setNum(4)" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">4</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setNum(5)" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">5</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setNum(6)" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">6</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setSign('&#42')" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">*</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setSign('&#47')" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">/</button><br/>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left: auto; margin-right:auto;">
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setNum(7)" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">7</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setNum(8)" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">8</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setNum(9)" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">9</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="result()" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">=</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="percent()" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">%</button><br/>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left: auto; margin-right:auto;">
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="setNum(0)" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">0</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="cos()" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">cos</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="sin()" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">sin</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="tan()" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">tan</button><br/>
+                </div>
+                <div class="col-md-1" style="background-color: grey;">
+                    <button onclick="reset()" style="border-top: 10px; margin-top: 10px; width: 100px; height: 100px; border-radius: 30px; background-color: lightblue; box-shadow: 0 4px 8px 0 rgba(32, 8, 210, 0.2);" type="button">AC</button><br/>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            
+            var num1=11;
+            var num2=11;
+            var num3=11;
+            var num4=11;
+
+            var num5=0;
+            var num6=0;
+            
+            var sign;
+            var finalResult;
+            var resultcos=0;
+
+            function setNum(a){
+                var num=arguments[0];
+                //window.alert(num);
+                if(num1==11)
+                {
+                    num1=num;
+                }
+                else if(num2==11)
+                {
+                    num2=num;
+                    num5=num1*10+num2;
+                }   
+                else if(num3==11)
+                {
+                    num3=num;
+                }   
+                else if(num4==11)
+                {
+                    num4=num;
+                    num6=num3*10+num4;
+                }   
+
+                dis(num);
+                
+
+            }
+
+            function reset(){
+                num1=11;
+                num2=11;
+                num3=11;
+                num4=11;
+
+                num5=0;
+                num6=0;
+                resultcos=0;
+
+                document.getElementById("result").value = '';
+
+            }
+
+            function setSign(b){
+                var signChosen=arguments[0];
+                sign=signChosen;
+                dis(" ");
+                dis(sign);
+                dis(" ");
+            }
+
+            function result(){
+                if(sign=="+")
+                {
+                    finalResult = num5+num6;
+                }
+                if(sign=="-")
+                {
+                    finalResult = num5-num6;
+                }
+                if(sign=="*")
+                {
+                    finalResult = num5*num6;
+                }
+                if(sign=="/")
+                {
+                    finalResult = num5/num6;
+                }
+                dis(" = ");
+                dis(finalResult);
+            }
+
+
+            function percent(){
+                finalResult=finalResult*100;
+                document.getElementById("result").value = finalResult;
+                dis("%");
+            }
+
+            function cos(){
+                reset();
+                dis("cos(");
+                dis(finalResult)
+                dis(")=");
+                finalResult=Math.cos(finalResult);
+                dis(finalResult);  
+            }
+
+            function sin(){
+                reset();
+                dis("sin(");
+                dis(finalResult)
+                dis(")=");
+                finalResult=Math.sin(finalResult);
+                dis(finalResult);  
+            }
+
+            function tan(){
+                reset();
+                dis("tan(");
+                dis(finalResult)
+                dis(")=");
+                finalResult=Math.tan(finalResult);
+                dis(finalResult);  
+            }
+
+            function dis(val) {
+            document.getElementById("result").value += val
+        }
+            
+        </script>
+    </body>
+</html>
